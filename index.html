@@ -3,31 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | Research & Projects</title>
+  <title>Abdullah Alhammadi | Quantitative Research</title>
   <style>
+    :root {
+      --bg: #0e0e10;
+      --text: #eaeaea;
+      --soft: #aaa;
+      --accent: #4da6ff;
+      --card: #1c1c1f;
+      --border: #222;
+    }
+
+    body.light {
+      --bg: #ffffff;
+      --text: #1c1c1e;
+      --soft: #444;
+      --accent: #0070f3;
+      --card: #f7f7f8;
+      --border: #ddd;
+    }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fdfdfd;
-      color: #1c1c1e;
-      line-height: 1.6;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
     }
 
     header {
-      background: #111;
-      color: white;
-      padding: 60px 20px;
+      padding: 80px 20px 60px;
       text-align: center;
+      background: linear-gradient(to bottom, var(--card), var(--bg));
     }
 
     header h1 {
-      font-size: 3em;
+      font-size: 3.5em;
       margin: 0;
+      font-weight: 600;
     }
 
     header p {
       font-size: 1.3em;
-      color: #aaa;
+      color: var(--soft);
+      margin-top: 10px;
+    }
+
+    .toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 8px 14px;
+      font-size: 0.9em;
+      cursor: pointer;
+      z-index: 999;
     }
 
     section {
@@ -37,82 +70,106 @@
     }
 
     h2 {
-      font-size: 2em;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 5px;
+      font-size: 1.8em;
+      margin-bottom: 0.5em;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
     }
 
     .project {
-      margin-top: 20px;
+      margin-top: 25px;
     }
 
     .project h3 {
-      margin-bottom: 5px;
-      color: #333;
+      margin: 0 0 5px;
+      color: var(--text);
     }
 
     .project p {
       margin: 0;
-      color: #555;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #999;
-      font-size: 0.9em;
+      color: var(--soft);
     }
 
     a {
-      color: #0070f3;
+      color: var(--accent);
       text-decoration: none;
     }
 
     a:hover {
       text-decoration: underline;
     }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 0.9em;
+      color: var(--soft);
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 2.3em;
+      }
+
+      header p {
+        font-size: 1em;
+      }
+    }
   </style>
 </head>
-
 <body>
 
+  <div class="toggle" onclick="toggleMode()">Toggle Light/Dark</div>
+
   <header>
-    <h1>Your Name</h1>
-    <p>Quantitative Researcher | Systematic Investing | Thought Architect</p>
+    <h1>Abdullah Alhammadi</h1>
+    <p>Quantitative Researcher • Systematic Investing • Signal Engineer</p>
   </header>
 
   <section>
-    <h2>About Me</h2>
-    <p>I’m a quantitative researcher focused on alpha signal engineering, volatility modeling, and regime classification. I build clean, data-driven strategies — no fluff, no guesswork. This is where I publish ideas, tools, and research that matter.</p>
+    <h2>About</h2>
+    <p>
+      I’m a quantitative researcher focused on alpha signal architecture, volatility-of-volatility modeling, and regime detection using Bayesian and information-theoretic frameworks. I develop robust, fully systematic strategies grounded in statistical rigor and falsifiability—no subjective overlays, no sentiment fluff. This space showcases the research, experiments, and tools I use to navigate financial complexity.
+    </p>
   </section>
 
   <section>
     <h2>Featured Work</h2>
 
     <div class="project">
-      <h3>Volatility-of-Volatility in Equity Markets</h3>
-      <p>A deep dive into second-order volatility dynamics using eigen decomposition and Bayesian priors. <a href="#">Read more</a></p>
+      <h3>Vol-of-Vol Dynamics in Equities</h3>
+      <p>Eigen-decomposition of second-order volatility with regime-aware clustering. <a href="#">Read paper</a></p>
     </div>
 
     <div class="project">
-      <h3>Bayesian Portfolio Optimization Toolkit</h3>
-      <p>A flexible Python library for constructing robust portfolios with hierarchical priors and regime awareness. <a href="#">GitHub repo</a></p>
+      <h3>Bayesian Portfolio Construction Toolkit</h3>
+      <p>A modular, shrinkage-driven framework for risk-aware portfolio design. <a href="#">GitHub</a></p>
     </div>
 
     <div class="project">
-      <h3>Market Breadth as a Regime Indicator</h3>
-      <p>An empirical exploration of narrow rallies and volatility using only price and volume data. <a href="#">Research note</a></p>
+      <h3>Market Breadth as a Signal</h3>
+      <p>Empirical exploration of volatility reactivity to narrow leadership. <a href="#">Research note</a></p>
     </div>
   </section>
 
   <section>
     <h2>Contact</h2>
-    <p>You can reach me at <a href="mailto:your@email.com">your@email.com</a> or follow my updates on <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>.</p>
+    <p>
+      Reach out at <a href="mailto:your@email.com">your@email.com</a><br>
+      Or follow insights and updates via <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+    </p>
   </section>
 
   <footer>
-    &copy; 2025 Your Name. All rights reserved.
+    &copy; 2025 Abdullah Alhammadi. All rights reserved.
   </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('light');
+    }
+  </script>
 
 </body>
 </html>
