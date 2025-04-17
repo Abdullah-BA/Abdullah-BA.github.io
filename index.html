@@ -1,41 +1,118 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My First Website</title>
-    <style>
-      body {
-        background-color: #f0f2f5;
-        font-family: Arial, sans-serif;
-        color: #333;
-        text-align: center;
-        padding: 50px;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name | Research & Projects</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfdfd;
+      color: #1c1c1e;
+      line-height: 1.6;
+    }
 
-      h1 {
-        color: #2c3e50;
-        font-size: 3em;
-        margin-bottom: 0.5em;
-      }
+    header {
+      background: #111;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-      p {
-        font-size: 1.3em;
-        color: #555;
-      }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
 
-      .box {
-        background: white;
-        max-width: 600px;
-        margin: auto;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="box">
-      <h1>Hello, world!</h1>
-      <p>This is my first GitHub Pages site. And now it's pretty ✨</p>
+    header p {
+      font-size: 1.3em;
+      color: #aaa;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 2em;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    .project {
+      margin-top: 20px;
+    }
+
+    .project h3 {
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .project p {
+      margin: 0;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #999;
+      font-size: 0.9em;
+    }
+
+    a {
+      color: #0070f3;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Your Name</h1>
+    <p>Quantitative Researcher | Systematic Investing | Thought Architect</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>I’m a quantitative researcher focused on alpha signal engineering, volatility modeling, and regime classification. I build clean, data-driven strategies — no fluff, no guesswork. This is where I publish ideas, tools, and research that matter.</p>
+  </section>
+
+  <section>
+    <h2>Featured Work</h2>
+
+    <div class="project">
+      <h3>Volatility-of-Volatility in Equity Markets</h3>
+      <p>A deep dive into second-order volatility dynamics using eigen decomposition and Bayesian priors. <a href="#">Read more</a></p>
     </div>
-  </body>
+
+    <div class="project">
+      <h3>Bayesian Portfolio Optimization Toolkit</h3>
+      <p>A flexible Python library for constructing robust portfolios with hierarchical priors and regime awareness. <a href="#">GitHub repo</a></p>
+    </div>
+
+    <div class="project">
+      <h3>Market Breadth as a Regime Indicator</h3>
+      <p>An empirical exploration of narrow rallies and volatility using only price and volume data. <a href="#">Research note</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>You can reach me at <a href="mailto:your@email.com">your@email.com</a> or follow my updates on <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
+
+</body>
 </html>
