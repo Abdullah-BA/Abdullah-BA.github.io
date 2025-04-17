@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abdullah Alhammadi | Quantitative Research</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic" />
   <style>
     :root {
       --bg: #0e0e10;
@@ -49,6 +50,19 @@
       margin-top: 10px;
     }
 
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     .toggle {
       position: fixed;
       top: 20px;
@@ -64,7 +78,7 @@
     }
 
     section {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 60px auto;
       padding: 0 20px;
     }
@@ -77,17 +91,30 @@
       padding-bottom: 6px;
     }
 
-    .project {
-      margin-top: 25px;
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
     }
 
-    .project h3 {
-      margin: 0 0 5px;
+    .project-card {
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      margin-top: 0;
       color: var(--text);
     }
 
-    .project p {
-      margin: 0;
+    .project-card p {
       color: var(--soft);
     }
 
@@ -125,39 +152,47 @@
   <header>
     <h1>Abdullah Alhammadi</h1>
     <p>Quantitative Researcher • Systematic Investing • Signal Engineer</p>
+    <nav>
+      <a href="#research">Research</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#summary">Summary PDF</a>
+      <a href="#private">Private</a>
+    </nav>
   </header>
 
-  <section>
-    <h2>About</h2>
-    <p>
-      I’m a quantitative researcher focused on alpha signal architecture, volatility-of-volatility modeling, and regime detection using Bayesian and information-theoretic frameworks. I develop robust, fully systematic strategies grounded in statistical rigor and falsifiability—no subjective overlays, no sentiment fluff. This space showcases the research, experiments, and tools I use to navigate financial complexity.
-    </p>
-  </section>
-
-  <section>
-    <h2>Featured Work</h2>
-
-    <div class="project">
-      <h3>Vol-of-Vol Dynamics in Equities</h3>
-      <p>Eigen-decomposition of second-order volatility with regime-aware clustering. <a href="#">Read paper</a></p>
-    </div>
-
-    <div class="project">
-      <h3>Bayesian Portfolio Construction Toolkit</h3>
-      <p>A modular, shrinkage-driven framework for risk-aware portfolio design. <a href="#">GitHub</a></p>
-    </div>
-
-    <div class="project">
-      <h3>Market Breadth as a Signal</h3>
-      <p>Empirical exploration of volatility reactivity to narrow leadership. <a href="#">Research note</a></p>
+  <section id="research">
+    <h2>Research Library</h2>
+    <input type="text" id="searchBar" placeholder="Search by method, topic, or tool..." style="width:100%;padding:10px;font-size:1em;margin-bottom:20px;" />
+    <div class="project-grid">
+      <div class="project-card" data-tags="volatility bayesian python">
+        <h3>Vol-of-Vol Dynamics in Equities</h3>
+        <p>Eigen-decomposition of second-order volatility with regime-aware clustering.</p>
+      </div>
+      <div class="project-card" data-tags="portfolio optimization bayesian shrinkage">
+        <h3>Bayesian Portfolio Construction Toolkit</h3>
+        <p>Modular, shrinkage-driven framework for risk-aware portfolio design.</p>
+      </div>
+      <div class="project-card" data-tags="market structure breadth volume">
+        <h3>Market Breadth as a Signal</h3>
+        <p>Exploration of volatility reactivity to narrow leadership using volume signals.</p>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Contact</h2>
+  <section id="summary">
+    <h2>Research Summary</h2>
+    <p><a href="research_summary.pdf" target="_blank">Download my 1-page Research Highlights PDF</a></p>
+  </section>
+
+  <section id="private">
+    <h2>Private Research Access</h2>
+    <p>Some content is gated. <a href="private-research.html">Access here</a> (requires login)</p>
+  </section>
+
+  <section id="philosophy">
+    <h2>Philosophy & Process</h2>
     <p>
-      Reach out at <a href="mailto:your@email.com">your@email.com</a><br>
-      Or follow insights and updates via <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+      My approach to quant research centers on structural signal validation, Bayesian falsifiability, and adaptive frameworks. Good signals don’t just explain — they anticipate, fail gracefully, and recompose under new regimes. I reject model overfitting, sentiment overlays, and unverified edge. This page explores my thought process.
     </p>
   </section>
 
@@ -169,6 +204,16 @@
     function toggleMode() {
       document.body.classList.toggle('light');
     }
+
+    // Basic search filtering
+    const searchBar = document.getElementById('searchBar');
+    searchBar.addEventListener('keyup', function() {
+      const keyword = this.value.toLowerCase();
+      document.querySelectorAll('.project-card').forEach(card => {
+        const tags = card.getAttribute('data-tags');
+        card.style.display = tags.includes(keyword) ? 'block' : 'none';
+      });
+    });
   </script>
 
 </body>
